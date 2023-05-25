@@ -1,17 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class CardController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Card card;
+    public Image picture;
+    public TextMeshProUGUI cardName, cardNumber;
+    
+    private void Awake() 
+    {
+        Initialize(card);
+    }
     void Start()
     {
         
     }
-
-    // Update is called once per frame
-    void Update()
+    public void  Initialize(Card card) 
+    {
+       picture.sprite = card.cardImage;
+       cardName.text = card.cardName;
+       cardNumber.text = card.cardNumber.ToString(); 
+    }
+    public void Update()
     {
         
     }
